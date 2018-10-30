@@ -5,10 +5,11 @@
     </device>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Types Table View Controller-->
+        <!--Title-->
         <scene sceneID="vx1-ma-AeE">
             <objects>
                 <tableViewController id="0A2-Bk-ezf" customClass="TypesTableViewController" customModule="Pokedex" customModuleProvider="target" sceneMemberID="viewController">
@@ -59,7 +60,7 @@
                                     <outlet property="racesLabel" destination="A1B-8b-wYm" id="2Rc-eP-WkB"/>
                                     <outlet property="typeImage" destination="ahq-PW-BbW" id="IKh-ih-8Lc"/>
                                     <outlet property="typeLabel" destination="Nw2-WF-xGE" id="aIs-b5-tko"/>
-                                    <segue destination="hTB-dl-8ud" kind="show" id="DQa-zl-Dhc"/>
+                                    <segue destination="hTB-dl-8ud" kind="show" identifier="ShowRacesSegue" id="DQa-zl-Dhc"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -69,16 +70,16 @@
                             <outlet property="delegate" destination="0A2-Bk-ezf" id="4J6-ML-i4P"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="FOG-7E-jzK"/>
+                    <navigationItem key="navigationItem" title="Title" id="Y0O-hP-ung"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wxg-LN-Uyc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="31.199999999999999" y="150.67466266866569"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Title-->
         <scene sceneID="jHF-O8-zLr">
             <objects>
-                <tableViewController id="hTB-dl-8ud" sceneMemberID="viewController">
+                <tableViewController id="hTB-dl-8ud" customClass="RacesTableViewController" customModule="Pokedex" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="wEe-qq-hQY">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -107,6 +108,9 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="CeX-YF-rxT" kind="show" identifier="ShowWeb" id="5Tn-du-FBD"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -114,19 +118,62 @@
                             <outlet property="delegate" destination="hTB-dl-8ud" id="J60-kf-wXI"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" title="Title" id="Zb6-Fl-nbn"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ag7-Uc-UHT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="831.20000000000005" y="150.67466266866569"/>
+            <point key="canvasLocation" x="687" y="151"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Title-->
+        <scene sceneID="zB1-MT-YgG">
+            <objects>
+                <viewController id="CeX-YF-rxT" customClass="WebViewController" customModule="Pokedex" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="1l5-Ah-K1V">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="i1f-2L-DDr">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="DzW-7S-Izf" firstAttribute="bottom" secondItem="i1f-2L-DDr" secondAttribute="bottom" id="86c-wk-MbW"/>
+                            <constraint firstItem="i1f-2L-DDr" firstAttribute="leading" secondItem="DzW-7S-Izf" secondAttribute="leading" id="Lf8-9U-dH3"/>
+                            <constraint firstItem="i1f-2L-DDr" firstAttribute="top" secondItem="DzW-7S-Izf" secondAttribute="top" id="Tcs-PQ-ObE"/>
+                            <constraint firstItem="DzW-7S-Izf" firstAttribute="trailing" secondItem="i1f-2L-DDr" secondAttribute="trailing" id="x5T-Tz-McW"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="DzW-7S-Izf"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Title" largeTitleDisplayMode="never" id="5aJ-6J-HhA"/>
+                    <connections>
+                        <outlet property="webView" destination="i1f-2L-DDr" id="Af7-7K-3oD"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vPv-hK-H9r" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1345" y="151"/>
+        </scene>
+        <!--Navigation Bar Controller-->
         <scene sceneID="P6E-sR-58n">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="4f2-qP-6Xx" sceneMemberID="viewController">
+                <navigationController title="Navigation Bar Controller" automaticallyAdjustsScrollViewInsets="NO" id="4f2-qP-6Xx" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="CtO-fy-arE">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="black" prompted="NO"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" largeTitles="YES" id="CtO-fy-arE">
+                        <rect key="frame" x="0.0" y="20" width="375" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                        </textAttributes>
+                        <textAttributes key="largeTitleTextAttributes">
+                            <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -135,7 +182,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xmX-nJ-kkS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-908" y="150.67466266866569"/>
+            <point key="canvasLocation" x="-644" y="151"/>
         </scene>
     </scenes>
 </document>

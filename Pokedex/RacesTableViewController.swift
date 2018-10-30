@@ -7,14 +7,16 @@
 //
 
 import UIKit
+import WebKit
 
 class RacesTableViewController: UITableViewController {
 
     var model = PokedexModel()
+    var typeIndex: Int!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.navigationItem.title = model.types[typeIndex].name
         }
 
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -22,14 +24,18 @@ class RacesTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return model.races.count
+        return model.types[typeIndex].races.count
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Race Cell", for: indexPath)
-
-//        cell.textLabel =
+        
+        let race = model.types[typeIndex].races[indexPath.row]
+        
+        cell.textLabel?.text = race.name
+        cell.detailTextLabel?.text = "\(race.code)"
+        cell.imageView?.image = UIImage(named: race.icon)
 
         return cell
     }
@@ -69,15 +75,19 @@ class RacesTableViewController: UITableViewController {
         return true
     }
     */
-
-    /*
-     MARK: - Navigation
-
-     In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-         Get the new view controller using segue.destination.
-         Pass the selected object to the new view controller.
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath)
+    {
+        self.performSegue(withIdentifier: "ShowWeb", sender: self)
     }
-    */
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let rtv = segue.destination as? WebViewController
+        let indexPath = self.tableView.indexPathForSelectedRow
+        rtv?.raceName = model.types[typeIndex].races[indexPath!.row].name
+        self.tableView.deselectRow(at: indexPath!, animated: true)
+        
+    }
+ 
 
 }

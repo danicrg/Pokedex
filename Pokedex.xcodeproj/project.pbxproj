@@ -18,6 +18,7 @@
 		6FA16E272181DAF6000E55E7 /* TypesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FA16E262181DAF6000E55E7 /* TypesTableViewCell.swift */; };
 		6FA16E292181E187000E55E7 /* TypesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FA16E282181E187000E55E7 /* TypesTableViewController.swift */; };
 		6FD6CE842188B5ED0065A57B /* RacesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FD6CE832188B5ED0065A57B /* RacesTableViewController.swift */; };
+		6FD6CE882188CC990065A57B /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FD6CE872188CC990065A57B /* WebViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		6FA16E262181DAF6000E55E7 /* TypesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypesTableViewCell.swift; sourceTree = "<group>"; };
 		6FA16E282181E187000E55E7 /* TypesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypesTableViewController.swift; sourceTree = "<group>"; };
 		6FD6CE832188B5ED0065A57B /* RacesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RacesTableViewController.swift; sourceTree = "<group>"; };
+		6FD6CE872188CC990065A57B /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +73,7 @@
 				6FA16E282181E187000E55E7 /* TypesTableViewController.swift */,
 				6FA16E262181DAF6000E55E7 /* TypesTableViewCell.swift */,
 				6FD6CE832188B5ED0065A57B /* RacesTableViewController.swift */,
+				6FD6CE872188CC990065A57B /* WebViewController.swift */,
 				6FA16E0D2181D5FE000E55E7 /* Main.storyboard */,
 				6FA16E102181D60A000E55E7 /* Assets.xcassets */,
 				6FA16E122181D60A000E55E7 /* LaunchScreen.storyboard */,
@@ -169,6 +172,7 @@
 				6FA16E292181E187000E55E7 /* TypesTableViewController.swift in Sources */,
 				6FD6CE842188B5ED0065A57B /* RacesTableViewController.swift in Sources */,
 				6FA16E272181DAF6000E55E7 /* TypesTableViewCell.swift in Sources */,
+				6FD6CE882188CC990065A57B /* WebViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
